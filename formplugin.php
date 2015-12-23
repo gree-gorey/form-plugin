@@ -5,8 +5,8 @@ Description: Plugin for User-Python-User interaction
 Version: 1.0
 Author: gree-gorey
 */
-mb_internal_encoding("cp1251");
-mb_http_output("cp1251");
+mb_internal_encoding("utf-8");
+mb_http_output("utf-8");
 
 function html_form_code() {
     echo '<form action="' . esc_url( $_SERVER['REQUEST_URI'] ) . '" method="post">';
