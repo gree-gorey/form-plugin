@@ -5,9 +5,11 @@ __author__ = 'Gree-gorey'
 import codecs
 import sys
 
-w = codecs.open(u'/home/stimdb/stimdb.ru/docs/output/output.csv', 'w', 'utf-8')
-w.close()
-
 s = sys.argv
 
-print(str(s[0]) + ' <a href="http://stimdb.ru/output/output.csv">Скачать результат</a>')
+w = codecs.open(u'/home/stimdb/stimdb.ru/docs/output/output.csv', 'w')
+w.write(str(s[1]) + '\n')
+w.write(str(s[2]))
+w.close()
+
+print('Готово! Можете <a href="http://stimdb.ru/output/output.csv">скачать результат</a>')

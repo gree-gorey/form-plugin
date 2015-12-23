@@ -26,16 +26,13 @@ function submitted() {
 
     if ( isset( $_POST['mp-submitted'] ) ) {
         
-        $command = escapeshellcmd('/home/stimdb/stimdb.ru/cgi/creator.py');
-        $output = shell_exec($command);
-
         $first    = ( $_POST["mp-first"] );
         $second   = ( $_POST["mp-second"] );
+        
+        $output = passthru('/home/stimdb/stimdb.ru/cgi/creator.py '.$first.' '.$second);
 
         echo '<div>';
-        echo '<p>Thanks for submitting.</p>';
         echo $output, '<br/>';
-        echo $second, '<br/>';
         echo '<br/>';
         echo '</div>';
 
